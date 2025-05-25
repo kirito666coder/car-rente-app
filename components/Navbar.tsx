@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Navbar() {
     return (
-        <nav className="w-screen flex justify-between items-center">
+        <nav className="w-screen flex justify-between items-center border-b-[1px] shadow-md shadow-white/50">
             {/* logo */}
-          <div className="ml-5">
+          <div className=" ml-5 md:ml-15">
             <Image
             src={'/logo.png'}
             alt="logo"
@@ -16,10 +16,10 @@ export default function Navbar() {
             />
           </div>
             {/* menu for big screens */}
-          <div className="mr-5 flex justify-center items-center gap-4">
-            <Link href={"/"} >Home</Link>
-            <Link href={"/history"} >History</Link>
-            <Link href={"/contact"} >Contact Us</Link>
+          <div className="mr-15 hidden md:flex justify-center items-center gap-4">
+            <Link className="cursor-pointer relative hover:text-yellow-400 after:absolute after:content-empty after:w-0 hover:after:w-full after:h-[2px] after:transition-all after:duration-300 after:bottom-0 after:left-0 after:bg-yellow-300" href={"/"} >Home</Link>
+            <Link className="cursor-pointer relative hover:text-yellow-400 after:absolute after:content-empty after:w-0 hover:after:w-full after:h-[2px] after:transition-all after:duration-300 after:bottom-0 after:left-0 after:bg-yellow-300" href={"/history"} >History</Link>
+            <Link className="cursor-pointer relative hover:text-yellow-400 after:absolute after:content-empty after:w-0 hover:after:w-full after:h-[2px] after:transition-all after:duration-300 after:bottom-0 after:left-0 after:bg-yellow-300" href={"/contact"} >Contact Us</Link>
 
             <UserButton/>
           </div>
