@@ -13,7 +13,13 @@ export default function Navbar() {
             width={32}
             />
           </div>
-        
+            {/* menu for big screens */}
+          <div>
+
+
+            <UserButton/>
+          </div>
+          {/* menu for small screens */}
         </nav>
     );
 }
