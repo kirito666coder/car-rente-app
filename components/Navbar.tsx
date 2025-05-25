@@ -23,6 +23,10 @@ export default function Navbar() {
 
             <UserButton/>
           </div>
+          {/* menu for small screens */}
+          <div className="flex md:hidden">
+
+          </div>
          
         </nav>
     );
