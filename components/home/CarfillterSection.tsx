@@ -12,7 +12,7 @@ export default function CarsCatalog() {
         <div className="ml-10 md:ml-40 flex justify-between items-center">
             <div>
             <h3 className="text-2xl font-bold mt-10 ">Cars Catalog</h3>
-            <p>Explore our cars you might likes</p>
+            <p className="font-medium">Explore our cars you might likes</p>
             </div>
 
             <div className="flex gap-2 mt-12 mr-10">
