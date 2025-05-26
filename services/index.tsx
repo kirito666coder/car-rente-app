@@ -3,7 +3,7 @@ import { gql, request } from 'graphql-request'
 
 export default async function getCarsList() {
     const query = gql`
-    query MyQuery {
+  query MyQuery {
   carLists {
     carAvg
     carBrand
@@ -14,6 +14,9 @@ export default async function getCarsList() {
     updatedAt
     price
     name
+    image {
+      url
+    }
   }
 }`
 
