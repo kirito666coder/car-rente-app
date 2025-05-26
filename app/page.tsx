@@ -8,12 +8,12 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
 
-const [CarList, setCarList] = useState()
+const [CarList, setCarList] = useState<any>([])
 
  const getcarsList = async()=>{
   const result:any = await getCarsList()
   console.log(result)
-  setCarList(result)
+  setCarList(result?.carLists)
  }
 
  useEffect(() => {
@@ -26,7 +26,7 @@ getcarsList()
     <Hero/>
     <Searchinput/>
     <CarsCatalog/>
-    <CarsLists/>
+    <CarsLists CarList={CarList}/>
     </main>
   );
 }
