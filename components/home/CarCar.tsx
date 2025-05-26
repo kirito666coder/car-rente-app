@@ -5,7 +5,7 @@ export default function CarCar(props: any) {
 
     const [Car, setCar] = useState(props.car)
     return (
-        <div className="bg-white m-10 text-black p-5 rounded-2xl">
+        <div className="bg-white m-10 text-black p-5 rounded-2xl group border-2 hover:border-blue-500">
             <h2 className="text-4xl font-semibold mb-2">{Car.name}</h2>
             <h2 className="text-3xl font-extrabold mb-2">
                 <span className="text-[15px] font-light">$</span>
@@ -20,7 +20,7 @@ export default function CarCar(props: any) {
                     width={300}
                 />
             </div>
-            <div className="flex justify-around">
+            <div className="flex justify-around group-hover:hidden">
                 <span className="flex justify-center items-center flex-col">
                     <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
@@ -79,6 +79,23 @@ export default function CarCar(props: any) {
 
                     <h5 className="font-medium">{Car.carAvg} MPG</h5>
                 </span>
+            </div>
+            <div className=" group-hover:flex justify-center items-center hidden mt-5">
+                <button className="bg-gradient-to-r from-blue-400 to-blue-700 text-white px-4 py-2 rounded-md flex items-center gap-10 hover:brightness-110 transition">
+                    <h4 className="font-semibold">Rent Now</h4>
+                    <div className="flex items-center gap-1">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="white"
+                        >
+                            <path d="M13 5l7 7-7 7M5 12h14" stroke="white" strokeWidth="2" fill="none" />
+                        </svg>
+                    </div>
+                </button>
+
             </div>
         </div>
     );
