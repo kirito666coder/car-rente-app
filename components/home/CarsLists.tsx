@@ -9,7 +9,6 @@ export default function CarsLists(props:any) {
 
                  return(<div>
                     <CarCar car={car}/>
-                    {car.name}
                  </div>)
                 })
             }

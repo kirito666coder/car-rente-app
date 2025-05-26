@@ -1,5 +1,11 @@
-export default function CarCar() {
+import { useState } from "react";
+
+export default function CarCar(props:any) {
+
+    const [Car, setCar] = useState(props.car)
     return (
-        <div></div>
+        <div>
+            {Car.name}
+        </div>
     );
 }
