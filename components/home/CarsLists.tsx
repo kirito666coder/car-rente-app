@@ -1,5 +1,15 @@
-export default function CarsLists() {
+export default function CarsLists(props:any) {
+
     return (
-        <div></div>
+        <div>
+            {
+                props.CarList.map((car:any,index:Number)=>{
+
+                 return(<div>
+                    {car.name}
+                 </div>)
+                })
+            }
+        </div>
     );
 }
