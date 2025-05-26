@@ -1,3 +1,5 @@
+import CarCar from "./CarCar";
+
 export default function CarsLists(props:any) {
 
     return (
@@ -6,6 +8,7 @@ export default function CarsLists(props:any) {
                 props.CarList.map((car:any,index:Number)=>{
 
                  return(<div>
+                    <CarCar car={car}/>
                     {car.name}
                  </div>)
                 })
