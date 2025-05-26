@@ -15,7 +15,11 @@ export default function CarsCatalog() {
 
             <div>
                 <DropdownMenu>
-                    <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+                    <DropdownMenuTrigger className="flex justify-center items-center gap-1 ">Price
+                        <svg className="mt-0.5" width="13" height="13" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="25,45 5,5 45,5" fill="currentColor" />
+                        </svg>
+                    </DropdownMenuTrigger>
                     <DropdownMenuContent>
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
@@ -26,9 +30,13 @@ export default function CarsCatalog() {
                     </DropdownMenuContent>
                 </DropdownMenu>
 
-                
+
                 <DropdownMenu>
-                    <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+                    <DropdownMenuTrigger className="flex justify-center items-center gap-1 ">Manefoctur
+                        <svg className="mt-0.5" width="13" height="13" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="25,45 5,5 45,5" fill="currentColor" />
+                        </svg>
+                    </DropdownMenuTrigger>
                     <DropdownMenuContent>
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
