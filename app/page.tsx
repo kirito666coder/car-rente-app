@@ -1,5 +1,6 @@
 "use client"
 import CarsCatalog from "@/components/home/CarfillterSection";
+import CarsLists from "@/components/home/CarsLists";
 import Hero from "@/components/home/Hero";
 import Searchinput from "@/components/home/Searchinput";
 import getCarsList from "@/services";
@@ -25,6 +26,7 @@ getcarsList()
     <Hero/>
     <Searchinput/>
     <CarsCatalog/>
+    <CarsLists/>
     </main>
   );
 }
