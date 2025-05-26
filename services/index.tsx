@@ -1,4 +1,5 @@
-import request from "graphql-request"
+
+import { gql, request } from 'graphql-request'
 
 export default async function getCarsList() {
     const query = gql`
