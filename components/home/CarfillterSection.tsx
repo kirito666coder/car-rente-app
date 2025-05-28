@@ -6,15 +6,30 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useEffect, useState } from "react";
 
 export default function CarsCatalog({CarOrgList}:any) {
 
-    const BrandSet = new Set()
+    const [brandList, setbrandList] = useState<any>()
+
     const fillerCarLists=()=>{
+        const BrandSet = new Set()
         CarOrgList.forEach((element:any) => {
             BrandSet.add(element.carBrand)
         });
+        console.log(BrandSet)
+        setbrandList(Array.from(BrandSet))
     }
+    
+    useEffect(() => {
+        if(CarOrgList){
+            fillerCarLists()
+        }
+    }, [CarOrgList])
+    
+
+    
+
     return (
         <div className="ml-10 md:ml-40 flex justify-between items-center">
             <div>
