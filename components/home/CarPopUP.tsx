@@ -10,6 +10,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
+import CarRentForm from "./CarRentForm";
 export default function CarPOPup({children,car}:any) {
     return (
         <Drawer>
@@ -23,7 +24,9 @@ export default function CarPOPup({children,car}:any) {
                         <div>
                             <CarCar car={car} />
                         </div>
-                        <div></div>
+                        <div>
+                            <CarRentForm/>
+                        </div>
                     </DrawerDescription>
                 </DrawerHeader>
                 <DrawerFooter>
