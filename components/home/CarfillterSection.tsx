@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useEffect, useState } from "react";
 
-export default function CarsCatalog({CarOrgList,setBrand}:any) {
+export default function CarsCatalog({CarOrgList,setBrand,setPrice}:any) {
 
     const [brandList, setbrandList] = useState<any>()
 
@@ -47,8 +47,8 @@ export default function CarsCatalog({CarOrgList,setBrand}:any) {
                     <DropdownMenuContent>
                         <DropdownMenuLabel>Price</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Min to Max</DropdownMenuItem>
-                        <DropdownMenuItem>Max to Min</DropdownMenuItem>
+                        <DropdownMenuItem onClick={()=>(setPrice(0))}>Min to Max</DropdownMenuItem>
+                        <DropdownMenuItem onClick={()=>(setPrice(1))}>Max to Min</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
 
