@@ -1,4 +1,3 @@
-import { Button } from "../ui/button";
 import CarCar from "./CarCar";
 import CarPOPup from "./CarPopUP";
 
@@ -10,7 +9,7 @@ export default function CarsLists(props: any) {
                 props.CarList.map((car: any, index: number) => {
 
                     return (
-                                <CarPOPup car={car}>
+                                <CarPOPup key={car.id} car={car}>
                                 <div>
                                     <CarCar car={car} />
                                 </div>
