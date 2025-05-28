@@ -7,7 +7,7 @@ export default function CarRentForm() {
         <div className="md:mt-20 text-lg">
             <h3>PickUp Location</h3>
             <ComboboxDemo/>
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center w-[90%] mt-2">
                 <div>Pick Up Date</div>
                 <div>Pick Off Date</div>
             </div>
