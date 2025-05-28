@@ -12,7 +12,7 @@ export default function CarRentForm() {
                 <div>Pick Off Date</div>
             </div>
             <DatePickerWithRange/>
-            <h3>Contact Number</h3>
+            <h3 className="mt-5">Contact Number</h3>
         </div>
     );
 }

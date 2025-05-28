@@ -19,7 +19,7 @@ export default function CarPOPup({children,car}:any) {
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
-                    <DrawerTitle className="text-4xl text-gray-400">Rent A Car Now!</DrawerTitle>
+                    <DrawerTitle className="text-xl md:text-4xl text-gray-400">Rent A Car Now!</DrawerTitle>
                     <DrawerDescription className="grid grid-cols-1 md:grid-cols-2">
                         <div>
                             <CarCar car={car} />
