@@ -27,8 +27,13 @@ export default function CarsLists(props: any) {
                             </DrawerTrigger>
                             <DrawerContent>
                                 <DrawerHeader>
-                                    <DrawerTitle>{car.name}</DrawerTitle>
-                                    <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                                    <DrawerTitle>Rent A Car Now!</DrawerTitle>
+                                    <DrawerDescription className="grid grid-cols-1 md:grid-cols-2">
+                                        <div>
+                                            <CarCar car={car}/>
+                                        </div>
+                                        <div></div>
+                                    </DrawerDescription>
                                 </DrawerHeader>
                                 <DrawerFooter>
                                     <Button>Submit</Button>
