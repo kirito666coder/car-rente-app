@@ -23,11 +23,18 @@ getcarsList()
  }, [])
  
 
+ const filterCarList= (brand:string)=>{
+  const filterLIst=CarOrgList.filter((Item:any)=>
+  Item.carBrand==brand)
+
+  setCarList(filterLIst)
+ }
+
   return (
     <main>
     <Hero/>
     <Searchinput/>
-    <CarsCatalog CarOrgList={CarOrgList} setBrand={(value:string)=>console.log(value)}/>
+    <CarsCatalog CarOrgList={CarOrgList} setBrand={(value:string)=>filterCarList(value)}/>
     <CarsLists CarList={CarList}/>
     </main>
   );
