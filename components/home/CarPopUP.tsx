@@ -10,13 +10,11 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
-export default function CarPOPup() {
+export default function CarPOPup({children,car}) {
     return (
         <Drawer>
             <DrawerTrigger>
-                <div>
-                    <CarCar car={car} />
-                </div>
+                {children}
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
