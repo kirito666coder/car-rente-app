@@ -27,7 +27,7 @@ getcarsList()
     <main>
     <Hero/>
     <Searchinput/>
-    <CarsCatalog CarOrgList={CarOrgList}/>
+    <CarsCatalog CarOrgList={CarOrgList} setBrand={(value:string)=>console.log(value)}/>
     <CarsLists CarList={CarList}/>
     </main>
   );

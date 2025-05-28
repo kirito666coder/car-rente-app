@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useEffect, useState } from "react";
 
-export default function CarsCatalog({CarOrgList}:any) {
+export default function CarsCatalog({CarOrgList,setBrand}:any) {
 
     const [brandList, setbrandList] = useState<any>()
 
@@ -67,7 +67,7 @@ export default function CarsCatalog({CarOrgList}:any) {
                                 <DropdownMenuItem
                                  key={index}
                                  onClick={()=>{
-                                    console.log(brand)
+                                    setBrand(brand)
                                  }}>
                                     {brand}
                                  </DropdownMenuItem>
