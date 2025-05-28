@@ -9,11 +9,13 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
 const [CarList, setCarList] = useState<any>([])
+const [CarOrgList, setOrgCarList] = useState<any>([])
 
  const getcarsList = async()=>{
   const result:any = await getCarsList()
   console.log(result)
   setCarList(result?.carLists)
+  setOrgCarList(result?.carLists)
  }
 
  useEffect(() => {
@@ -25,7 +27,7 @@ getcarsList()
     <main>
     <Hero/>
     <Searchinput/>
-    <CarsCatalog/>
+    <CarsCatalog CarOrgList={CarOrgList}/>
     <CarsLists CarList={CarList}/>
     </main>
   );
