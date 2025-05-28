@@ -62,9 +62,17 @@ export default function CarsCatalog({CarOrgList}:any) {
                     <DropdownMenuContent>
                         <DropdownMenuLabel>Manufactural</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Honda</DropdownMenuItem>
-                        <DropdownMenuItem>BMW</DropdownMenuItem>
-                        <DropdownMenuItem>Toyota</DropdownMenuItem>
+                        {
+                            brandList?.map((brand:string,index:number)=>(
+                                <DropdownMenuItem
+                                 key={index}
+                                 onClick={()=>{
+                                    console.log(brand)
+                                 }}>
+                                    {brand}
+                                 </DropdownMenuItem>
+                            ))
+                        }
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
