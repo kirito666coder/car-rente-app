@@ -19,15 +19,15 @@ export default function CarsLists(props: any) {
                 props.CarList.map((car: any, index: number) => {
 
                     return (
-                        <Drawer>
+                        <Drawer key={car.id}>
                             <DrawerTrigger>
-                                <div key={car.id}>
+                                <div>
                                     <CarCar car={car} />
                                 </div>
                             </DrawerTrigger>
                             <DrawerContent>
                                 <DrawerHeader>
-                                    <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+                                    <DrawerTitle>{car.name}</DrawerTitle>
                                     <DrawerDescription>This action cannot be undone.</DrawerDescription>
                                 </DrawerHeader>
                                 <DrawerFooter>
