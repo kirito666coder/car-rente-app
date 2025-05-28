@@ -21,25 +21,14 @@ import {
 
 const frameworks = [
   {
-    value: "next.js",
-    label: "Next.js",
+    value: "hom Solo",
+    label: "Hom Solo",
   },
   {
-    value: "sveltekit",
-    label: "SvelteKit",
+    value: "greedo",
+    label: "Greedo",
   },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
+  
 ]
 
 export function ComboboxDemo() {
@@ -57,13 +46,13 @@ export function ComboboxDemo() {
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
+            : "PickUp Location?"}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." className="h-9" />
+          {/* <CommandInput placeholder="Search framework..." className="h-9" /> */}
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
