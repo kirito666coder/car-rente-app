@@ -30,6 +30,16 @@ getcarsList()
   setCarList(filterLIst)
  }
 
+ const filterCarPirce = (Price:number)=>{
+  const sortedList = [...CarList].sort((a:any,b:any)=>{
+    return Price ===1
+    ?b.price - a.price
+    :a.price - b.price;
+  })
+  console.log(CarList)
+  setCarList(sortedList)
+ }
+
   return (
     <main>
     <Hero/>
@@ -37,7 +47,7 @@ getcarsList()
     <CarsCatalog 
     CarOrgList={CarOrgList} 
     setBrand={(value:string)=>filterCarList(value)}
-    setPrice={(value:number)=>console.log(value)}/>
+    setPrice={(value:number)=>filterCarPirce(value)}/>
     <CarsLists CarList={CarList}/>
     </main>
   );
