@@ -7,7 +7,14 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export default function CarsCatalog() {
+export default function CarsCatalog({CarOrgList}:any) {
+
+    const BrandSet = new Set()
+    const fillerCarLists=()=>{
+        CarOrgList.forEach((element:any) => {
+            BrandSet.add(element.carBrand)
+        });
+    }
     return (
         <div className="ml-10 md:ml-40 flex justify-between items-center">
             <div>
