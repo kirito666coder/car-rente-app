@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/popover"
 import { getStorLOcation } from "@/services"
 
-export function ComboboxDemo() {
+export function ComboboxDemo({ setFormdata}: any) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
   const [storeLocations, setStoreLocations] = React.useState([])
@@ -37,6 +37,13 @@ export function ComboboxDemo() {
   React.useEffect(() => {
     getStorlocations()
   }, [])
+
+  const HandelLocationdata = (data:string) => {
+    console.log(data)
+    setFormdata((p)=>({
+      ...p,location:data
+    }))
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -63,6 +70,7 @@ export function ComboboxDemo() {
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue)
                     setOpen(false)
+                    HandelLocationdata(currentValue === value ? "" : currentValue)
                   }}
                 >
                   {store.address}
