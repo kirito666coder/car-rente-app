@@ -20,9 +20,8 @@ export default function CarPOPup({ children, car }: any) {
         PickUpDate: "",
         PickOffDate: "",
         ContactNumber: "",
-        carId:{
-        id:car.id
-        }
+        carId:car.id
+        
         })
 
 const handelFormSubmit = async () => {
