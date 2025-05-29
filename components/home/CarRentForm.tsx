@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { ComboboxDemo } from "../ui/combobox";
 import { DatePickerWithRange } from "../ui/DateRangePicker";
 
 
 export default function CarRentForm() {
+    const [Formdata, setFormdata] = useState({
+        location:"",
+        pickUpDate:"",
+        PickOffDate:"",
+        ContactNumber:"",
+})
     return (
         <div className="md:mt-20 text-lg">
             <h3>PickUp Location</h3>
