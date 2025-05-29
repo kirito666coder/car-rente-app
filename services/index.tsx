@@ -41,7 +41,7 @@ export const getStorLOcation = async () => {
 }
 
 
-const createBooking = async () => {
+export const createBooking = async () => {
   const mutationQuerry = gql`
  mutation MyMutation {
   createBooking(

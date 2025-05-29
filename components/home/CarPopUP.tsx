@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/drawer"
 import CarRentForm from "./CarRentForm";
 import { useState } from "react";
+import { createBooking } from "@/services";
 export default function CarPOPup({ children, car }: any) {
     const [Formdata, setFormdata] = useState({
         userName:"",
@@ -24,8 +25,9 @@ export default function CarPOPup({ children, car }: any) {
         }
         })
 
-const handelFormSubmit = () => {
-    console.log(Formdata)
+const handelFormSubmit = async () => {
+  const response =  await createBooking()
+  console.log(response)
 }
 
 return (
