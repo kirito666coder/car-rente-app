@@ -11,7 +11,14 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import CarRentForm from "./CarRentForm";
+import { useState } from "react";
 export default function CarPOPup({children,car}:any) {
+       const [Formdata, setFormdata] = useState({
+            location: "",
+            PickUpDate: "",
+            PickOffDate: "",
+            ContactNumber: "",
+        })
     return (
         <Drawer>
             <DrawerTrigger>
@@ -25,7 +32,7 @@ export default function CarPOPup({children,car}:any) {
                             <CarCar car={car} />
                         </div>
                         <div>
-                            <CarRentForm/>
+                            <CarRentForm setFormdata={setFormdata} Formdata={Formdata}/>
                         </div>
                     </DrawerDescription>
                 </DrawerHeader>
