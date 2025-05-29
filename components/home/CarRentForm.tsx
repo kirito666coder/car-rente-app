@@ -15,6 +15,8 @@ useEffect(() => {
   console.log(Formdata)
 }, [Formdata])
 
+
+const [ContactNumber, setContactNumber] = useState('')
     return (
         <div className="md:mt-20 text-lg">
             <h3>PickUp Location</h3>
@@ -25,7 +27,14 @@ useEffect(() => {
             </div>
             <DatePickerWithRange setFormdata={setFormdata}/>
             <h3 className="mt-5">Contact Number</h3>
-            <input type="tel" placeholder="Contact Number" className="outline-none border-gray-300 border-1 py-2 text-sm w-[90%] rounded-sm px-4 placeholder:font-medium" />
+            <input
+             value={ContactNumber}
+             onChange={(e)=>{
+             setContactNumber(e.target.value)
+             }}
+             type="tel"
+            placeholder="Contact Number"
+             className="outline-none border-gray-300 border-1 py-2 text-sm w-[90%] rounded-sm px-4 placeholder:font-medium" />
         </div>
     );
 }
