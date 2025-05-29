@@ -41,7 +41,7 @@ export const getStorLOcation = async () => {
 }
 
 
-export const createBooking = async () => {
+export const createBooking = async ({Formdata}:any) => {
   const mutationQuerry = gql`
  mutation MyMutation {
   createBooking(
@@ -59,4 +59,8 @@ export const createBooking = async () => {
   }
 }
   `
+
+    const result = await request(`https://ap-south-1.cdn.hygraph.com/content/cmb3wzu3g015v07wd2vuxhjh5/master`, mutationQuerry)
+
+  return result
 }

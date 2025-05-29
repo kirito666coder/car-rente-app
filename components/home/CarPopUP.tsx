@@ -26,7 +26,8 @@ export default function CarPOPup({ children, car }: any) {
         })
 
 const handelFormSubmit = async () => {
-  const response =  await createBooking()
+    console.log(Formdata)
+  const response =  await createBooking(Formdata)
   console.log(response)
 }
 
