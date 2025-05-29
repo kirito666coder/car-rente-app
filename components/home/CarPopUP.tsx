@@ -19,6 +19,11 @@ export default function CarPOPup({children,car}:any) {
             PickOffDate: "",
             ContactNumber: "",
         })
+
+    const handelFormSubmit = ()=>{
+        console.log(Formdata)
+    }
+
     return (
         <Drawer>
             <DrawerTrigger>
@@ -37,7 +42,9 @@ export default function CarPOPup({children,car}:any) {
                     </DrawerDescription>
                 </DrawerHeader>
                 <DrawerFooter>
-                    <Button>Submit</Button>
+                    <Button
+                    onClick={handelFormSubmit}
+                    >Submit</Button>
                     <DrawerClose>
                         <Button variant="outline">Cancel</Button>
                     </DrawerClose>
