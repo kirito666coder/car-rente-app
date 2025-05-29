@@ -9,7 +9,6 @@ import {
   Command,
   CommandEmpty,
   CommandGroup,
-  CommandInput,
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
@@ -18,22 +17,26 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-
-const frameworks = [
-  {
-    value: "hom Solo",
-    label: "Hom Solo",
-  },
-  {
-    value: "greedo",
-    label: "Greedo",
-  },
-  
-]
+import { getStorLOcation } from "@/services"
 
 export function ComboboxDemo() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
+  const [storeLocations, setStoreLocations] = React.useState([])
+
+  const getStorlocations = async () => {
+    try {
+      const response = await getStorLOcation()
+      const locations = response?.storesLocations || []
+      setStoreLocations(locations)
+    } catch (error) {
+      console.error("Failed to fetch store locations:", error)
+    }
+  }
+
+  React.useEffect(() => {
+    getStorlocations()
+  }, [])
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -44,32 +47,29 @@ export function ComboboxDemo() {
           aria-expanded={open}
           className="w-[90%] justify-between"
         >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "PickUp Location?"}
+          {value || "PickUp Location?"}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0">
         <Command>
-          {/* <CommandInput placeholder="Search framework..." className="h-9" /> */}
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No locations found.</CommandEmpty>
             <CommandGroup>
-              {frameworks.map((framework) => (
+              {storeLocations.map((store, index) => (
                 <CommandItem
-                  key={framework.value}
-                  value={framework.value}
+                  key={index}
+                  value={store.address}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue)
                     setOpen(false)
                   }}
                 >
-                  {framework.label}
+                  {store.address}
                   <Check
                     className={cn(
                       "ml-auto",
-                      value === framework.value ? "opacity-100" : "opacity-0"
+                      value === store.address ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>
