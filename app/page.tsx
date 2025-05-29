@@ -3,7 +3,7 @@ import CarsCatalog from "@/components/home/CarfillterSection";
 import CarsLists from "@/components/home/CarsLists";
 import Hero from "@/components/home/Hero";
 import Searchinput from "@/components/home/Searchinput";
-import getCarsList from "@/services";
+import {getCarsList} from "@/services";
 import { useEffect, useState } from "react";
 
 export default function Home() {
